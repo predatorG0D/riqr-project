@@ -1,0 +1,153 @@
+.block {
+    background: white;
+    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.13);
+    border-radius: 14px;
+    padding: 1em;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    .fio {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        p {
+            margin: 0;
+            padding-left: 15px;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 21px;
+            color: #3939D6;
+        }
+        &:hover {
+           text-decoration: underline;
+           img {
+               border: solid 2px #243c4c;
+           }
+        }
+    }
+
+    
+}
+
+.btn {
+    margin: 5px;
+    padding: 8px 0;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.status_content {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.status_content__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    justify-content: flex-end;
+    button, .price {
+        width: 100px;
+        padding: 8px;
+        margin: 5px;
+    }
+    .price {
+        background: #F0F0F0;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 15px;
+    }
+    .button {
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+
+.checkbox {
+
+    position: relative;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    .checkbox_field {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        z-index: 1;
+    }
+    .checkbox_field:checked + span{
+        border: 1px solid blue;
+    }
+    .checkbox_field:checked + span::after{
+        content: url('../../public/icons/check.svg');
+        position: absolute;
+        top: -8px;
+        left: 0;
+        filter: drop-shadow(1px 1px 0 white) drop-shadow(0px -1px 0 white) drop-shadow(0px 1px 0 white) drop-shadow(0px -1px 0 white)
+    }
+    span {
+        
+        border-radius: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.hidden_page {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin: 0 20px;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media screen and (max-width: 992px) {
+    .buttons {
+        grid-row: 2;
+        grid-column: 2;
+        flex-wrap: wrap;
+    }
+    .block {
+        grid-template-columns: 1fr 1fr;
+    }
+    .status_content {
+        grid-row: 2;
+        grid-column: 1;
+        button {
+            margin-left: auto;
+        }
+    }
+    .status_content__buttons {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .hidden_page {
+        grid-row: 1;
+        grid-column: 2;
+        justify-content: flex-end;
+        margin: 0;
+    }
+}
